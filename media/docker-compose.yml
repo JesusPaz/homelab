@@ -6,7 +6,7 @@ services:
     network_mode: 'host'
     volumes:
       - /mnt/data/jellyfin/config:/config
-      - /mnt/data/media:/media
+      - /mnt/data/downloads:/media
     restart: 'unless-stopped'
     environment:
       - JELLYFIN_PublishedServerUrl=http://192.168.1.12
