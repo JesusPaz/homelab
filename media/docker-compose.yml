@@ -50,7 +50,7 @@ services:
       - TZ=Etc/UTC
     volumes:
       - /home/jesus/containers/qbittorrent:/config
-      - /home/jesus/data/torrents:/downloads
+      - /home/jesus/data/torrents:/data/torrents
     ports:
       - 8080:8080
     restart: unless-stopped
@@ -64,7 +64,7 @@ services:
       - TZ=Etc/UTC-5
     volumes:
       - /home/jesus/containers/jackett:/config
-      - /home/jesus/downloads/torrents:/downloads
+      - /home/jesus/data/torrents:/downloads
     ports:
       - 9117:9117
     restart: unless-stopped
