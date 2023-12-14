@@ -8,7 +8,8 @@ services:
     group_add:
       - "109" # render group
     volumes:
-      - /home/jesus/containers/jellyfin:/config
+      - /home/jesus/containers/jellyfin/cache:/cache
+      - /home/jesus/containers/jellyfin/config:/configs
       - /home/jesus/data/media:/media
     restart: 'unless-stopped'
     environment:
