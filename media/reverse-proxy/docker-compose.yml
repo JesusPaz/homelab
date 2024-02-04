@@ -21,6 +21,7 @@ services:
 
   radarr:
     container_name: radarr
+    network_mode: 'host'
     image: ghcr.io/hotio/radarr
     ports:
       - "7878:7878"
@@ -34,6 +35,8 @@ services:
       - /home/jesus/data:/data
 
   sonarr:
+    container_name: sonarr
+    network_mode: 'host'
     image: ghcr.io/hotio/sonarr
     environment:
       - PUID=1000
@@ -48,6 +51,8 @@ services:
     restart: unless-stopped
 
   qbittorrent:
+    container_name: qbittorrent
+    network_mode: 'host'
     image: ghcr.io/hotio/qbittorrent
     environment:
       - PUID=1000
@@ -62,6 +67,8 @@ services:
     restart: unless-stopped
 
   jackett:
+    container_name: jackett
+    network_mode: 'host'
     image: ghcr.io/hotio/jackett
     environment:
       - PUID=1000
@@ -76,6 +83,8 @@ services:
     restart: unless-stopped
 
   flaresolverr:
+    container_name: flaresolverr
+    network_mode: 'host'
     image: ghcr.io/flaresolverr/flaresolverr
     environment:
       - LOG_LEVEL=${LOG_LEVEL:-info}
@@ -87,6 +96,8 @@ services:
     restart: unless-stopped
 
   nginx:
+    container_name: nginx
+    network_mode: 'host'
     image: jc21/nginx-proxy-manager
     restart: unless-stopped
     ports:
@@ -96,4 +107,3 @@ services:
     volumes:
       - /home/jesus/containers/nginx/data:/data
       - /home/jesus/containers/nginx/letsencrypt:/etc/letsencrypt
-
